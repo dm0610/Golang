@@ -1,12 +1,15 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
 func main() {
 	fmt.Println("Hello to webservice")
-	startWebService()
+	port := 3000
+	isStarted := startWebService(port, 1)
+	fmt.Println(isStarted)
 	//u := models.User{
 	//	ID:        2,
 	//	FirstName: "Dmitriy",
@@ -30,11 +33,14 @@ func main() {
 	//fmt.Println("*lastNamePtr: ", *lastNamePtr)
 }
 
-func startWebService() {
+func startWebService(port, numberOfRetries int) error {
 	fmt.Println("Starting server ...")
 
 	// do important things
 
-	fmt.Println("Server started.")
+	fmt.Println("Server started on port", port)
+	fmt.Println("Number of retries", numberOfRetries)
+
+	return errors.New("Something goes wrong")
 
 }
