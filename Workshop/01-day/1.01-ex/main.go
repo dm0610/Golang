@@ -1,3 +1,4 @@
+//указатели
 package main
 
 import (
